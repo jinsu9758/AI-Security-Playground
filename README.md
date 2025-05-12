@@ -18,7 +18,7 @@ AI 기반 동적 Security Playground 제작
 이러한 이유로 본 프로젝트에서는 AI 기반의 동적 Security Playground를 제작하여 실습자의 행위나 외부 공격 시도를 기반으로 실습 환경을 동적으로 변화시키고, 보다 현실적이고 복합적인 위협 상황에 대응할 수 있는 경험을 보안 실무자들에게 제공하고자 함.
 
 ***프로젝트 개요***  
-위 프로젝트는 XSS 취약점을 기반으로 한 프로토타입 Playground를 제작하였습니다.  
+위 프로젝트는 XSS 취약점을 기반으로 한 프로토타입 Playground 제작  
   
 ***프로젝트 동작과정***  
 ![Image](https://github.com/user-attachments/assets/4c8b84f7-bcfa-4183-a633-2b12a251be0c) 
