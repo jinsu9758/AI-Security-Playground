@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Blog Home - Start Bootstrap Template</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="{{ url_for('static', filename='assets/favicon.ico') }}"/>
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}" />
+    </head>
+<body>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <div class="container">
+                <a class="navbar-brand" href="#!">Welcome to the XSS Challenge Platform</a>
+                </div>
+            </div>
+        </nav>
+
+    <!-- 플래그 제출 폼 -->
+    <div class="main-container">
+      <div class="box">
+        <h2 class="text-center mb-4" style="text-align: center;"><b>Flag</b></h2>
+        <form action="/flag" method="POST">
+          <input type="text" class="form-control mb-3" name="flag" placeholder="플래그 입력" required="" autofocus="" /> 
+          <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">제출</button>
+              </div>
+        </form>
+
+        <!-- 플래시 메시지 출력 및 성공 여부 체크 -->
+        {% with messages = get_flashed_messages(with_categories=true) %}
+        {% if messages %}
+          <ul>
+            {% for category, message in messages %}
+              <li style="color: {% if category == 'success' %}green{% else %}red{% endif %};">{{ message }}</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% endwith %}
+
+        <!-- 성공 메시지가 있었으면 다음 단계 버튼 출력 -->
+        {% if success %}
+          <form action="/next_step" method="GET">
+            <div class="d-grid gap-2">
+                  <button type="submit" class="btn btn-primary">다음단계 동적생성</button>
+              </div>
+          </form>
+        {% endif %}
+    </div>
+  </div> 
+</body>
+</html>
