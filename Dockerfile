@@ -51,5 +51,6 @@ WORKDIR /app
 COPY ./app /app
 RUN pip install flask
 RUN pip install selenium
+RUN pip install openai
 
 CMD ["python", "app.py"]
