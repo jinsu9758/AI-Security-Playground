@@ -138,6 +138,12 @@ def flag():
         prev_level = int(request.cookies.get('level', 1))
         
         if cur_level:
+            if cur_level == 5:
+                flash('🎉 모든 단계를 완료했습니다! 더 이상 제출할 플래그가 없습니다.', 'success')
+                resp = make_response(render_template('flag.html', success=False))
+                resp.set_cookie('level', str(cur_level))  # 그대로 유지
+                return resp
+            
             cur_level += 1
             if cur_level > prev_level:
                 flash('정답입니다! 🎉', 'success')
@@ -158,8 +164,9 @@ def flag():
 def next_step():
     with open('user_payload.txt', 'r', encoding='utf-8') as f:
         user_payload = f.read().strip()
-        
-    process_payload(user_payload)
+        step_level = int(request.cookies.get('level', 1))
+
+    process_payload(user_payload, step_level)
     flash('새로운 AI 동적 로직이 생성되었습니다.', 'info')
     return render_template('index.html')
     
