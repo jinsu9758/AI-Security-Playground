@@ -15,6 +15,7 @@ def send_chatgpt(user_payload, xss_py_content, step_level):
     api_key = os.getenv("OPENAI_API_KEY")
     client = OpenAI(api_key=api_key)
 
+    #{"role": "user", "content": f"또한 새로운 new_code는 이전 단계의 로직은 삭제하며, 이전 단계들의 로직은 중복이 안되게 하고, 소문자 필터링에서 대문자 필터링 추가 같은 유사한 취약한 로직은 만들지마세요."},
     messages = [
         # system role
         {"role": "system", "content": "You're an assistant who generates vulnerable logic for XSS attacks and sends it to JSON"},
@@ -32,7 +33,6 @@ def send_chatgpt(user_payload, xss_py_content, step_level):
         {"role": "user", "content": f"무조건 JSON 결과값에 대해서만 응답해야하며 결과값 이외의 대답은 절대 하지말아주세요."},
         # 최종 결과 포맷 통일성
         {"role": "user", "content": f"생성된 새로운 로직의 JSON Key는 new_code이고, 예상되는 결과값은 predict_result입니다."},
-        #{"role": "user", "content": f"또한 새로운 new_code는 이전 단계의 로직은 삭제하며, 이전 단계들의 로직은 중복이 안되게 하고, 소문자 필터링에서 대문자 필터링 추가 같은 유사한 취약한 로직은 만들지마세요."},
         {"role": "user", "content": f"새롭게 생성한 함수의 포맷은 def display_input(payload)이며, 함수 내부에서 로직을 가공하고 최종적으로는 payload 변수로 반환되어야합니다."}
     ]
 

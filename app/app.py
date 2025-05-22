@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, flash, make_response
+from flask import Flask, render_template, request, flash, make_response, send_file
 from xss import display_input
 from valid import process_payload
 from selenium import webdriver
@@ -169,6 +169,13 @@ def next_step():
     process_payload(user_payload, step_level)
     flash('새로운 AI 동적 로직이 생성되었습니다.', 'info')
     return render_template('index.html')
+
+
+@app.route('/hint')
+def get_hint():
+    filepath = os.path.join(os.path.dirname(__file__), 'xss.py')
+    return send_file(filepath, mimetype='text/plain')
+
     
 
 if __name__ == '__main__':
