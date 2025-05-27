@@ -1,3 +1,4 @@
+
 # AI Security Playground
 ## 프로젝트 소개 ##
 **프로젝트 명**  
@@ -53,6 +54,19 @@ AI 기반 동적 Security Playground 제작
 : 반복 가능한 실습 구조를 통해 교육 효율 극대화  
 * 확장 가능성  
 : AI 기반 동적 프로세스를 이용하여 다양한 분야에 적용 가능  
+
+## Playground 구축 ##
+```
+$ git clone https://github.com/jinsu9758/AI-Security-Playground.git
+$ cd AI-Security-Playground/
+$ sudo docker compose up
+
+# 접속 (browser)
+{ip주소}:5000
+```
   
-## 최종 결과물 ##  
-업데이트 예정...
+## 프로젝트 활동 ##  
+- 대구권 연합 동아리 세미나 발표(25.06.04)
+
+## 프로젝트 결과물 ##
+- Github Repository
