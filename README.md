@@ -59,6 +59,7 @@ AI 기반 동적 Security Playground 제작
 ```
 $ git clone https://github.com/jinsu9758/AI-Security-Playground.git
 $ cd AI-Security-Playground/
+$ echo "OPENAI_API_KEY={Your_OpenAI_API_KEY}" > .env
 $ sudo docker compose up
 
 # 접속 (browser)
