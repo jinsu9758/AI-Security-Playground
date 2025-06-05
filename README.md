@@ -9,7 +9,7 @@ AI 기반 동적 Security Playground 제작
 유현종 ( hyunzongu )   
 고재민 ( Greenboy )  
 성준우 ( chocovy )  
-양재원 ( R4ambb )  
+양재원 ( R4mbb )  
 
 ***프로젝트 배경***  
 악의적인 해커의 지속적이고 발전된 공격으로 보안 실무자는 단순한 이론 학습만으로는 이를 효과적으로 대응하기 어려워 실습 환경(Playground)을 통해 실전 감각 및 대응 능력을 기르고 있음.
@@ -71,3 +71,4 @@ $ sudo docker compose up
 
 ## 프로젝트 결과물 ##
 - Github Repository
+- 논문(초록)
